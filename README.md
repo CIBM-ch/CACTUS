@@ -138,50 +138,15 @@ cactus1-substrates convert -folder nfg_strands/ -outfile output.txt
 
 ---
 
-## Configuration
+## Documentation
 
-Configuration files use space-separated key-value pairs. Multiple values on a single line create parameter sweeps.
-
-| Config file | Use case |
-|-------------|----------|
-| `config_files/cactus_single.txt` | Single fibre bundle substrates |
-| `config_files/cactus_crossing.txt` | Crossing fibre bundle substrates |
-
----
-
-## Output
-
-| Extension | Stage | Description |
-|-----------|:-----:|-------------|
-| `.init` | 1 | Initial fibre placements |
-| `.partial` | 2 | Optimization checkpoints (every 50 iterations) |
-| `optimized_final.txt` | 2 | Final optimized fibre configuration |
-| `.bz2` pickles | 3 | Compressed voxel-space metadata |
-| `.ply` | 3 | 3D triangle meshes |
-
-### Visualizing meshes
-
-```bash
-meshlab tutorial_single_00000/meshes/simulations/*.ply
-```
-
----
-
-## Architecture
-
-```
-src/cactus1_substrate/
-├── cli.py               # Unified CLI entry point
-├── paths.py             # Dynamic path resolution
-├── core/                # Library modules
-│   ├── cactus_math, rotating_strand, wattson_function, ...
-├── pipeline/            # Three-stage pipeline wrappers
-│   ├── initialization, optimization, growth_mesh
-├── workers/             # Parallelized heavy computation
-│   ├── meta_grid, bake_mesh_pickle, grid_initialization, ...
-└── tools/               # Standalone utilities
-    ├── quick_mesh, optim_logger, nfg2cactus, ...
-```
+| Guide | Description |
+|-------|-------------|
+| [Installation](docs/installation.md) | Detailed setup, dependencies, and troubleshooting |
+| [Configuration Reference](docs/configuration.md) | Every config parameter explained |
+| [Pipeline Guide](docs/pipeline.md) | Step-by-step walkthrough of the three stages |
+| [File Formats](docs/file-formats.md) | Input/output file format specifications |
+| [Examples](docs/examples.md) | Complete workflows for common use cases |
 
 ---
 

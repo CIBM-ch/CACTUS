@@ -6,6 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "cactus1-substrates"
 version = "2.0.0"
 description = "CACTUS — Computational Axonal Configurator for Tailored and Ultradense Substrates"
+license = {text = "MIT"}
 requires-python = ">=3.9"
 dependencies = [
     "icecream",
